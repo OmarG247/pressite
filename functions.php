@@ -13,3 +13,10 @@ function pressite_wp_enqueue_scripts() {
     wp_enqueue_script( 'pp', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', array (), null, true);
     wp_enqueue_script( 'bs', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', array ( 'jq', 'pp' ), null, true);
 }
+
+add_action( 'after_setup_theme', 'pressite_after_setup_theme' );
+function pressite_after_setup_theme() {
+    
+    // Add support for core-supported features
+    add_theme_support( 'title-tag' );
+}
