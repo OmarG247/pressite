@@ -19,4 +19,5 @@ function pressite_after_setup_theme() {
     
     // Add support for core-supported features
     add_theme_support( 'title-tag' );
+    add_theme_support( 'custom-background' );
 }
