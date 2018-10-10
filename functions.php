@@ -22,14 +22,17 @@ function pressite_after_setup_theme() {
     
     // Add support for core-supported features
     add_theme_support( 'title-tag' );
-    add_theme_support( 'custom-background' );
+    add_theme_support( 'custom-background', array( 'default-color' => '#ffffff' ) );
 }
 
 add_action( 'customize_register', 'pressite_customize_register' );
 function pressite_customize_register( $wp_customize ) {
     
     // Text color
-    $wp_customize->add_setting( 'text_color', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
+    $wp_customize->add_setting( 'text_color', array( 
+        'default'           => '#212529',
+        'sanitize_callback' => 'sanitize_hex_color' 
+    ) );
   
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'text_color', array(
         'section' => 'colors',
