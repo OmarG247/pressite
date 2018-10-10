@@ -42,11 +42,8 @@ function pressite_customize_register( $wp_customize ) {
 
     $text_color = get_theme_mod( 'text_color', '' );
     if ( ! empty( $text_color ) ) {
-      ?>
-      body {
-        color: <?php echo sanitize_hex_color($text_color); ?>;
-      }
-      <?php
+    ?>
+body { color: <?php echo sanitize_hex_color($text_color); ?>; }<?php
     }
 
     $css = ob_get_clean();
