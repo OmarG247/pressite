@@ -7,3 +7,13 @@ License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: pressite
 */
+
+/* Pressite defaults */
+html, body {
+    height: 100%;
+}
+
+/* Pressite custom classes */
+.ps-bg-transparent {
+    background-color: transparent;
+}
