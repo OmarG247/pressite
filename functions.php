@@ -53,3 +53,16 @@ body { color: <?php echo sanitize_hex_color($text_color); ?>; }<?php
 
     return $css;
   }
+
+  add_action( 'widgets_init', 'pressite_widgets_init' );
+  function pressite_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Landing hero content',
+		'id'            => 'pressite_landing_hero_content',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	) );
+}

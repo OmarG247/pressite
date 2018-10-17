@@ -10,6 +10,11 @@
                 <h1 class="display-4"><?php echo get_bloginfo( 'name'); ?></h1>
                 <p class="lead"><?php echo get_bloginfo( 'description'); ?></p>
                 <hr class="my-4">
+                <?php if ( is_active_sidebar( 'pressite_landing_hero_content' ) ) : ?>
+                    <div id="pressite_landing_hero_content-sidebar" class="pressite_landing_hero_content-sidebar widget-area" role="complementary">
+                        <?php dynamic_sidebar( 'pressite_landing_hero_content' ); ?>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
