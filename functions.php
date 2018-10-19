@@ -130,11 +130,29 @@ footer { color: <?php echo sanitize_hex_color($footer_text_color); ?>; }<?php
       ) );
 
       register_sidebar( array(
-      'name'          => __('Footer bottom', 'pressite'),
-      'id'            => 'pressite_footer_bottom',
+      'name'          => __('Footer left', 'pressite'),
+      'id'            => 'pressite_footer_left',
       'before_widget' => '<div>',
       'after_widget'  => '</div>',
       'before_title'  => '<h6>',
       'after_title'   => '</h6>',
     ) );
+
+    register_sidebar( array(
+        'name'          => __('Footer right', 'pressite'),
+        'id'            => 'pressite_footer_right',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h6>',
+        'after_title'   => '</h6>',
+      ) );
+
+    register_sidebar( array(
+        'name'          => __('Footer bottom', 'pressite'),
+        'id'            => 'pressite_footer_bottom',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h6>',
+        'after_title'   => '</h6>',
+      ) );
 }
