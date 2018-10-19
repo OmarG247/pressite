@@ -91,12 +91,22 @@ a:hover, a:active, a:focus { color: <?php echo sanitize_hex_color($link_hover_co
   add_action( 'widgets_init', 'pressite_widgets_init' );
   function pressite_widgets_init() {
 
-	register_sidebar( array(
-		'name'          => 'Landing hero content',
-		'id'            => 'pressite_landing_hero_content',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
-	) );
+    // Register sidebars
+    register_sidebar( array(
+      'name'          => 'Landing hero content',
+      'id'            => 'pressite_landing_hero_content',
+      'before_widget' => '<div>',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h2>',
+      'after_title'   => '</h2>',
+      ) );
+
+      register_sidebar( array(
+      'name'          => __('Footer bottom', 'pressite'),
+      'id'            => 'pressite_footer_bottom',
+      'before_widget' => '<div>',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h6>',
+      'after_title'   => '</h6>',
+    ) );
 }
