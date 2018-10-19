@@ -93,7 +93,7 @@ a:hover, a:active, a:focus { color: <?php echo sanitize_hex_color($link_hover_co
 
     // Register sidebars
     register_sidebar( array(
-      'name'          => 'Landing hero content',
+      'name'          => __('Landing hero content', 'pressite'),
       'id'            => 'pressite_landing_hero_content',
       'before_widget' => '<div>',
       'after_widget'  => '</div>',
