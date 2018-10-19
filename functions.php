@@ -45,21 +45,21 @@ function pressite_customize_register( $wp_customize ) {
         'sanitize_callback' => 'sanitize_hex_color',
       ) );
   
-      $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
-        'section' => 'colors',
-        'label'   => __( 'Link color', 'pressite' ),
-      ) ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
+    'section' => 'colors',
+    'label'   => __( 'Link color', 'pressite' ),
+    ) ) );
 
-      $wp_customize->add_setting( 'link_hover_color', array(
-        'default'   => '#0056b3',
-        'sanitize_callback' => 'sanitize_hex_color',
-      ) );
-  
-      $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_hover_color', array(
-        'section' => 'colors',
-        'label'   => __( 'Link hover color', 'pressite' ),
-        'description' => esc_html__( __('* This color will also apply to active and focused links.') )
-      ) ) );
+    $wp_customize->add_setting( 'link_hover_color', array(
+    'default'   => '#0056b3',
+    'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_hover_color', array(
+    'section' => 'colors',
+    'label'   => __( 'Link hover color', 'pressite' ),
+    'description' => esc_html__( __('* This color will also apply to active and focused links.') )
+    ) ) );
 
       // Footer colors
     $wp_customize->add_setting( 'footer_bg_color', array( 
@@ -87,32 +87,27 @@ function pressite_customize_register( $wp_customize ) {
     ob_start();
 
     $text_color = get_theme_mod( 'text_color', '' );
-    if ( ! empty( $text_color ) ) {
-    ?>
+    if ( ! empty( $text_color ) ) { ?>
 body { color: <?php echo sanitize_hex_color($text_color); ?>; }<?php
     }
 
     $link_color = get_theme_mod( 'link_color', '' );
-    if ( ! empty( $link_color ) ) {
-      ?>
+    if ( ! empty( $link_color ) ) { ?>
 a { color: <?php echo sanitize_hex_color($link_color); ?>;}<?php
     }
 
     $link_hover_color = get_theme_mod( 'link_hover_color', '' );
-    if ( ! empty( $link_hover_color ) ) {
-      ?>
+    if ( ! empty( $link_hover_color ) ) { ?>
 a:hover, a:active, a:focus { color: <?php echo sanitize_hex_color($link_hover_color); ?>;}<?php
     }
 
     $footer_bg_color = get_theme_mod( 'footer_bg_color', '' );
-    if ( ! empty( $footer_bg_color ) ) {
-        ?>
+    if ( ! empty( $footer_bg_color ) ) { ?>
 footer { background-color: <?php echo sanitize_hex_color($footer_bg_color); ?>; }<?php
     }
 
     $footer_text_color = get_theme_mod( 'footer_text_color', '' );
-    if ( ! empty( $footer_text_color ) ) {
-        ?>
+    if ( ! empty( $footer_text_color ) ) { ?>
 footer { color: <?php echo sanitize_hex_color($footer_text_color); ?>; }<?php
     }
 
