@@ -60,6 +60,27 @@ function pressite_customize_register( $wp_customize ) {
         'label'   => __( 'Link hover color', 'pressite' ),
         'description' => esc_html__( __('* This color will also apply to active and focused links.') )
       ) ) );
+
+      // Footer colors
+    $wp_customize->add_setting( 'footer_bg_color', array( 
+        'default'           => '#ffffff',
+        'sanitize_callback' => 'sanitize_hex_color' 
+    ) );
+  
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_bg_color', array(
+        'section' => 'colors',
+        'label'   => __( 'Footer background color', 'pressite' )
+    ) ) );
+
+    $wp_customize->add_setting( 'footer_text_color', array( 
+        'default'           => '#212529',
+        'sanitize_callback' => 'sanitize_hex_color' 
+    ) );
+  
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_text_color', array(
+        'section' => 'colors',
+        'label'   => __( 'Footer text color', 'pressite' )
+    ) ) );
  }
  
  function pressite_get_customizer_css() {
@@ -81,6 +102,18 @@ a { color: <?php echo sanitize_hex_color($link_color); ?>;}<?php
     if ( ! empty( $link_hover_color ) ) {
       ?>
 a:hover, a:active, a:focus { color: <?php echo sanitize_hex_color($link_hover_color); ?>;}<?php
+    }
+
+    $footer_bg_color = get_theme_mod( 'footer_bg_color', '' );
+    if ( ! empty( $footer_bg_color ) ) {
+        ?>
+footer { background-color: <?php echo sanitize_hex_color($footer_bg_color); ?>; }<?php
+    }
+
+    $footer_text_color = get_theme_mod( 'footer_text_color', '' );
+    if ( ! empty( $footer_text_color ) ) {
+        ?>
+footer { color: <?php echo sanitize_hex_color($footer_text_color); ?>; }<?php
     }
 
     $css = ob_get_clean();
