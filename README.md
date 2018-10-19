@@ -1,2 +1,2 @@
-# pressite
-WordPress theme framework.
+# Pressite
+WordPress theme (framework).
