@@ -17,3 +17,7 @@ html, body {
 .ps-bg-transparent {
     background-color: transparent;
 }
+
+hr {
+    color: inherit;
+}
